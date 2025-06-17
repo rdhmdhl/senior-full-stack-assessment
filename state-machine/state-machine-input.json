@@ -1,0 +1,29 @@
+{
+  "vinylRecords": [
+    {
+      "title": "Abbey Road",
+      "artist": "The Beatles",
+      "id": 1
+    },
+    {
+      "title": "Dark Side of the Moon",
+      "artist": "Pink Floyd",
+      "id": 2
+    },
+    {
+      "title": "Thriller",
+      "artist": "Michael Jackson",
+      "id": 3
+    },
+    {
+      "title": "Back in Black",
+      "artist": "AC/DC",
+      "id": 4
+    },
+    {
+      "title": "Rumours",
+      "artist": "Fleetwood Mac",
+      "id": 5
+    }
+  ]
+}

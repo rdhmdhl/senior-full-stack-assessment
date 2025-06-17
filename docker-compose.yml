@@ -1,0 +1,18 @@
+services:
+  state-machine:
+    build: ./state-machine
+    environment:
+      - MOCK_API_FAILURE=true
+    ports:
+      - "3005:3005"
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend:/app
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
