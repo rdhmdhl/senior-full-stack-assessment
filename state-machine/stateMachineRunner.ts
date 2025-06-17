@@ -113,7 +113,6 @@ export class StateMachineRunner {
           ? await this.executeState(state.Next, merged)
           : merged;
 
-        // Strip parallelResults
         const { parallelResults, ...cleaned } = nextInput;
         return cleaned;
       }
@@ -125,7 +124,6 @@ export class StateMachineRunner {
         }
 
         const results: any[] = [];
-        // process each item one by one
         for (const item of items) {
           const subDef: StateMachineDefinition = {
             StartAt: state.Iterator.StartAt,
