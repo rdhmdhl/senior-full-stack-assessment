@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node server.ts",
-    "build": "tsc"
+    "start": "node dist/index.js",
+    "build": "rm -rf dist && tsc"
   },
   "keywords": [],
   "author": "",
@@ -14,13 +13,12 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "node-fetch": "^3.3.2",
     "redis": "^5.5.6"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
-    "ts-node": "^10.9.2",
+    "@types/node": "^24.0.1",
     "typescript": "^5.8.3"
   }
 }
