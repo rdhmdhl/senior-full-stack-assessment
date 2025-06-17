@@ -25,7 +25,6 @@ app.post("/search", async (req, res) => {
     });
 
     const result = await response.json();
-    console.log("result: ", result);
     await redis.set(
       runId,
       JSON.stringify({ status: "complete", data: result }),

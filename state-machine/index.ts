@@ -4,8 +4,8 @@ import { stateMachineDefinition } from "./developer-defined-files/stateMachineDe
 import { functions } from "./developer-defined-files/functions";
 
 const handleRunStateMachine = async (req: Request, res: Response) => {
-  const runId = Math.random().toString(36).substring(2);
-  const input = { ...req.body, runId }; // inject into state machine context
+  const { runId, ...rest } = req.body;
+  const input = { ...rest, runId };
   const runner = new StateMachineRunner(stateMachineDefinition, functions);
   try {
     const result = await runner.run(input);

@@ -64,7 +64,6 @@ export class StateMachineRunner {
   ) {}
 
   async run(input: Context): Promise<Context> {
-    console.log(`[${input.runId}] StateMachineRunner.run() called`);
     return this.executeState(this.definition.StartAt, input);
   }
 
@@ -74,7 +73,6 @@ export class StateMachineRunner {
   ): Promise<Context> {
     const state = this.definition.States[stateName];
 
-    console.log(`Executing state: ${stateName} with ID: ${input.id}`);
     switch (state.Type) {
       case "Task": {
         const fn = this.functions[state.Function];
@@ -121,15 +119,7 @@ export class StateMachineRunner {
       }
 
       case "Map": {
-        const runId = input.runId || "no-runId";
-        console.log(`[${runId}] MapState starting on ${state.ItemsPath}`);
         const items: any[] = input[state.ItemsPath];
-
-        console.log(
-          `[${runId}] MapState items:`,
-          items.map((i) => i.id),
-        );
-
         if (!Array.isArray(items)) {
           throw new Error(`Map items at '${state.ItemsPath}' must be array`);
         }
@@ -137,7 +127,6 @@ export class StateMachineRunner {
         const results: any[] = [];
         // process each item one by one
         for (const item of items) {
-          console.log(`[${runId}] Map iteration for record ID:`, item.id);
           const subDef: StateMachineDefinition = {
             StartAt: state.Iterator.StartAt,
             States: state.Iterator.States,

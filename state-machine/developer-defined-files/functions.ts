@@ -31,7 +31,6 @@ function createCircuitBreaker<T>(
     }
 
     for (let attempt = 0; attempt < maxRetries; attempt++) {
-      console.log(`Attempt ${attempt + 1} of ${maxRetries}`);
       try {
         const result = await fn();
         failureCount = 0;

@@ -19,7 +19,7 @@ export default function SearchBar({ setResults, setIsLoading, setErr }: Props) {
     <Autocomplete
       className="mt-10 bg-white"
       value={value}
-      onChange={(event, newValue) => {
+      onChange={(_, newValue) => {
         let selectedTitle = "";
         let selectedArtist = "";
         let id = Math.floor(Math.random() * 100000); // fallback
