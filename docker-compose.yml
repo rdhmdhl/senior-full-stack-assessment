@@ -9,10 +9,7 @@ services:
     build: ./backend
     ports:
       - "3001:3001"
-    volumes:
-      - ./backend:/app
   redis:
     image: redis:latest
     ports:
       - "6379:6379"
-

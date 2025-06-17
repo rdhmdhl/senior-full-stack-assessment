@@ -1,5 +1,12 @@
 # Vinyl Record Finder Assessment
 
+## Quick Start
+- Frontend is mobile first
+- The MOCK_API_FAILURE environment variable is set to true, which will simulate 429 errors (see bonus section in statemachine/README.md)
+- run `docker-compose up --build` in the root of the project to start the backend, statemachine and Redis containers.
+- run `npm install` and then `npm run dev` in the frontend directory
+
+
 ## Problem Statement
 
 Your goal is to build a vinyl record search service that finds records across multiple stores while ensuring authenticity.
