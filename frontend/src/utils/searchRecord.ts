@@ -36,6 +36,7 @@ export const searchVinyl = async (
             setIsLoading(false);
           } else {
             setErr("No records found");
+            setIsLoading(false);
           }
         } else {
           setErr(json.error ?? "Unknown error");
